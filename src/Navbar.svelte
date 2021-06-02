@@ -1,11 +1,12 @@
 <main>
-    <div>
+    <!-- div for navbar -->
+    <div id="navbar-main">
         <h1>The world of</h1>
     </div>
 </main>
 
 <style>
-    div {
+    #navbar-main {
         border-bottom: solid #000000;
     }
 </style>
