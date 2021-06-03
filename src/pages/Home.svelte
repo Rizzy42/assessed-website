@@ -10,4 +10,5 @@
     <h1>Hello</h1>
     <h2>Test</h2>
     <Link to="guitar">Guitar</Link>
+    <Link to="bass">Bass</Link>
 </main>

@@ -9,8 +9,9 @@
     import { Router, Route } from "svelte-routing";
 
     // Importing pages
-    import Home from "./pages/Home.svelte"
-    import Guitar from "./pages/Guitar.svelte"
+    import Home from "./pages/Home.svelte";
+    import Guitar from "./pages/Guitar.svelte";
+    import Bass from "./pages/Bass.svelte";
 
     export let url = "";
 </script>
@@ -19,5 +20,6 @@
     <div>
         <Route path="/" component={Home}/>
         <Route path="/guitar" component={Guitar}/>
+        <Route path="/bass" componenet={Bass}/>
     </div>
 </Router>
