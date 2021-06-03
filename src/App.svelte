@@ -5,14 +5,19 @@
 </svelte:head>
 
 <script lang="ts">
-    // Importing all required components for the app
-    import Navbar from "./Navbar.svelte";
+    // Importing svelte-routing package
+    import { Router, Route } from "svelte-routing";
+
+    // Importing pages
+    import Home from "./pages/Home.svelte"
+    import Guitar from "./pages/Guitar.svelte"
+
+    export let url = "";
 </script>
 
-<main>
-	<Navbar/>
-</main>
-
-<style>
-	
-</style>
+<Router {url}>
+    <div>
+        <Route path="/" component={Home}/>
+        <Route path="/guitar" component={Guitar}/>
+    </div>
+</Router>
