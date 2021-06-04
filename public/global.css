@@ -7,6 +7,14 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	/* Bootstrap navbar may cover content */
+	padding-top: 6.5em;
+}
+
+/* Loads custom font for title */
+@font-face {
+    font-family: "Rawk Brush";
+    src: url("./assets/fonts/Rawkbrush-ywLym.otf") format("opentype");
 }
 
 body {
