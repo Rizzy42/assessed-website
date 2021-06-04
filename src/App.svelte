@@ -13,13 +13,14 @@
     import Guitar from "./pages/Guitar.svelte";
     import Bass from "./pages/Bass.svelte";
 
+    // Setting adjustable base url for routing
     export let url = "";
 </script>
 
 <Router {url}>
     <div>
         <Route path="/" component={Home}/>
-        <Route path="/guitar" component={Guitar}/>
-        <Route path="/bass" componenet={Bass}/>
+        <Route path="/instruments/guitar" component={Guitar}/>
+        <Route path="/instruments/bass" componenet={Bass}/>
     </div>
 </Router>
