@@ -15,6 +15,8 @@ html, body {
 @font-face {
     font-family: "Rawk Brush";
     src: url("./assets/fonts/Rawkbrush-ywLym.otf") format("opentype");
+	/* Displays system font while main fonts load */
+	font-display: swap;
 }
 
 body {
