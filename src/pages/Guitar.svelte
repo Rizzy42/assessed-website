@@ -2,5 +2,10 @@
     import Navbar from "../components/Navbar.svelte";
 </script>
 
-<Navbar/>
-<h1>Test</h1>
+<svelte:head>
+    <title>The Guitar</title>
+</svelte:head>
+
+<main>
+    <Navbar/>
+</main>

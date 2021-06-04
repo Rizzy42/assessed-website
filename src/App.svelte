@@ -12,6 +12,8 @@
     import Home from "./pages/Home.svelte";
     import Guitar from "./pages/Guitar.svelte";
     import Bass from "./pages/Bass.svelte";
+    
+    import NotFound from "./pages/NotFound.svelte";
 
     // Setting adjustable base url for routing
     export let url = "";
@@ -19,8 +21,9 @@
 
 <Router {url}>
     <div>
-        <Route path="/" component={Home}/>
         <Route path="/instruments/guitar" component={Guitar}/>
-        <Route path="/instruments/bass" componenet={Bass}/>
+        <Route path="/instruments/bass" component={Bass}/>
+        <Route path="/" exact component={Home}/>
+        <Route component="{NotFound}"/>
     </div>
 </Router>
