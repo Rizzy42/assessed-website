@@ -10,6 +10,9 @@
     <div id="div-main">
         <p id="title-text-small">Welcome to the world of</p>
         <h1 id="title-main">Guitar</h1>
+        <!-- "_blank" targets open links in a new tab -->
+        <!-- "noopener" prevents external page from controlling my page, i.e. enhances security -->
+        <p id="attrib-main-image">Photo by <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/@pienmuller?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pien Muller</a> on <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/s/photos/concert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </div>
 </main>
 
@@ -30,9 +33,6 @@
         /* Gets rid of ugly white space */
         margin: 0;
     }
-    #div-main::backdrop {
-        filter: blur(4px);
-    }
     #title-main {
         font-family: Rawk Brush;
         font-size: 20em;
@@ -44,6 +44,17 @@
         font-size: 5em;
         margin-bottom: 0;
     }
+    #attrib-main-image {
+        font-family: Rawk Brush;
+        color: #fff;
+    }
+    .link-attrib-main-image {
+        text-decoration: none;
+        color: #00ffcc;
+    }
+    .link-attrib-main-image:hover {
+        text-decoration: underline;
+    }
     /* @media queries to resize fonts accordingly for smaller screens */
     @media screen and (max-width: 950px) {
         #title-main {
@@ -51,6 +62,9 @@
         }
         #title-text-small {
             font-size: 1em;
+        }
+        #attrib-main-image {
+            font-size: 0.7em;
         }
     }
 </style>
