@@ -38,6 +38,10 @@
         /* Get rid of odd-looking text decoration */
         text-decoration: none;
     }
+    .navbar-nav {
+        /* Makes sure navbar elements stay next to each other */
+        flex-direction: row;
+    }
     .navbar-item {
         font-size: 1.5em;
         padding: 0 0.5em;
@@ -46,5 +50,10 @@
         font-size: 0.7em;
         margin-bottom: 0;
     }
-
+    @media screen and (max-width: 700px) {
+        .navbar-item {
+            font-size: 1em;
+     
+        }
+    }
 </style>

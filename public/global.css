@@ -1,20 +1,17 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
+/* Global CSS file with framework defaults and a few of my own additions :) */
 html, body {
 	position: relative;
+	/* Hides ugly scrollbar */
+	overflow: auto;
 	width: 100%;
 	height: 100%;
-	/* Bootstrap navbar may cover content */
-	padding-top: 6.5em;
+	margin: 0;
 }
 
-/* Loads custom font for title */
+/* Loads font into custom font family for title */
 @font-face {
     font-family: "Rawk Brush";
-    src: url("./assets/fonts/Rawkbrush-ywLym.otf") format("opentype");
+    src: url("/assets/fonts/Rawkbrush-ywLym.otf") format("opentype");
 	/* Displays system font while main fonts load */
 	font-display: swap;
 }
@@ -22,7 +19,7 @@ html, body {
 body {
 	color: #333;
 	margin: 0;
-	padding: 8px;
+	min-height: 100%;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
