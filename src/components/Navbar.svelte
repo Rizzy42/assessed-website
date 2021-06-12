@@ -1,4 +1,4 @@
-<main>
+<template>
     <!-- nav for navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <!-- Full width container -->
@@ -22,15 +22,15 @@
            </ul>
         </div>
     </nav>
-</main>
+</template>
 
-<style>
+<style lang="scss">
     nav {
         /* applies custom font */
         font-family: "Rawk Brush";
     }
     h1 {
-        color: #00ffcc;
+        color: var(--main-colour);
         /* Gets rid of extra space at bottom of navbar */
         margin-bottom: 0;
     }
@@ -41,6 +41,9 @@
     .navbar-nav {
         /* Makes sure navbar elements stay next to each other */
         flex-direction: row;
+    }
+    .navbar-brand p {
+        color: #fff;
     }
     .navbar-item {
         font-size: 1.5em;

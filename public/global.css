@@ -1,4 +1,10 @@
-/* Global CSS file with framework defaults and a few of my own additions :) */
+/* Global SS file with framework defaults and a few of my own additions :) */
+
+/* Some variables so that I don't repeat myself often */
+:root {
+	--main-colour: #AB9DE9;
+}
+
 html, body {
 	position: relative;
 	/* Hides ugly scrollbar */
@@ -25,7 +31,7 @@ body {
 }
 
 a {
-	color: rgb(0,100,200);
+	color: rgb(0, 100, 200);
 	text-decoration: none;
 }
 
