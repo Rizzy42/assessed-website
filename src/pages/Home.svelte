@@ -27,6 +27,10 @@
         font-family: Rawk Brush;
         color: #fff;
     }
+    @mixin paint-font($colour) {
+        font-family: Rawk Brush;
+        color: $colour;
+    }
 
     #div-main {
         background-image: url("/assets/images/guitar-concert.jpg");
@@ -46,9 +50,8 @@
     }
     
     #title-main {
-        font-family: Rawk Brush;
+        @include paint-font(#2b119e);
         font-size: 20em;
-        color: #2b119e;
         transform: skewY(-11deg);
     }    
     #title-text-small {
@@ -75,8 +78,7 @@
         background-image: url("/assets/images/guitar.jpg");
         background-size: cover;
         h1 {
-            font-family: Rawk Brush;
-            color: var(--main-colour);
+            @include paint-font(var(--main-colour));
         }
         p {
             @include white-paint-font;
