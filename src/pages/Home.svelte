@@ -1,4 +1,7 @@
 <script>
+    // Imports required to implement transition
+    import { fade } from "svelte/transition";
+
     import Navbar from "../components/Navbar.svelte"
 
     // Variables for the descriptions of the instruments
@@ -7,22 +10,28 @@
 
 <template>
     <Navbar/>
-    <div id="div-main">
-        <p id="title-text-small">Welcome to the world of</p>
-        <h1 id="title-main">Guitar</h1>
-        <!-- "_blank" targets open links in a new tab -->
-        <!-- "noopener" prevents external page from controlling my page, i.e. enhances security -->
-        <p id="attrib-main-image">Photo by <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/@sanarara?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Xie lipton</a> on <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/s/photos/concert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+    <div id="background-main">
+        <div id="div-main">
+            <p id="title-text-small" transition:fade="{{delay: 1500, duration: 300}}">Welcome to the world of</p>
+            <h1 id="title-main" transition:fade="{{delay: 2500, duration: 400}}">Guitar</h1>
+            <!-- "_blank" targets open links in a new tab -->
+            <!-- "noopener" prevents external page from controlling my page, i.e. enhances security -->
+            <p id="attrib-main-image" transition:fade="{{delay: 3500}}">Photo by <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/@julianlozano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Julian Lozano</a> on <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/s/photos/guitar-concert?utm_source=unsplash&utm_medium=referral&utm_content=creditcopytextt">Unsplash</a></p>
+        </div>
+        <!-- TODO Add credits to guitar image -->
+        Photo by <a href="https://unsplash.com/@pt_samv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sam Vanagtmael</a> on <a href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+   
     </div>
     <div id="content">
         <div id="content-guitar">
             <h1>The electric guitar</h1>
-            <p>   {guitarDesc}</p>
+            <p>{guitarDesc}</p>
         </div>
     </div>
 </template>
 
 <style lang="scss">
+    // Mixins for repetitive tasks
     @mixin white-paint-font {
         font-family: Rawk Brush;
         color: #fff;
@@ -32,15 +41,22 @@
         color: $colour;
     }
 
-    #div-main {
+    @mixin flexbox($direction) {
+        display: flex;
+        flex-direction: $direction;
+    }
+    #background-main {
         background-image: url("/assets/images/guitar-concert.jpg");
-        height: 115vh;
         /* One image to cover the entire section */
         background-size: cover;
+    }
+    #div-main {
         /* Flexbox will make it easy to position everything */
-        display: flex;
         /* Subtitle should be above title */
-        flex-direction: column;
+        @include flexbox(column);
+        /* Blurs background image */
+        backdrop-filter: blur(1em);
+        height: 115vh;
         /* Titles should be in the middle of the section */
         justify-content: center;
         align-items: center;
@@ -50,23 +66,23 @@
     }
     
     #title-main {
-        @include paint-font(#2b119e);
+        @include white-paint-font;
         font-size: 20em;
         transform: skewY(-11deg);
     }    
     #title-text-small {
-        @include white-paint-font;
+        @include paint-font(#000000);
         font-size: 2em;
         /* Subtitle should stay close to title */
         margin-bottom: 0;
     }
     
     #attrib-main-image {
-        @include white-paint-font;
+        @include paint-font(#000);
     }
     .link-attrib-main-image {
         text-decoration: none;
-        color: var(--main-colour);
+        color: #ffffff;
 
         &:hover {
             text-decoration: underline;
@@ -74,11 +90,16 @@
     }
     
     #content-guitar {
+        @include flexbox(column);
         padding: 10em 2em;
+        justify-content: center;
         background-image: url("/assets/images/guitar.jpg");
         background-size: cover;
+        background-position: center center;
         h1 {
             @include paint-font(var(--main-colour));
+            font-size: 3em;
+            font-weight: bold;   
         }
         p {
             @include white-paint-font;

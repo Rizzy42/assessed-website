@@ -38,6 +38,9 @@
         /* Get rid of odd-looking text decoration */
         text-decoration: none;
     }
+    .container-fluid {
+        border-bottom: none;
+    }
     .navbar-nav {
         /* Makes sure navbar elements stay next to each other */
         flex-direction: row;
