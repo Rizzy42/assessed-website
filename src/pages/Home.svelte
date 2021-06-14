@@ -11,7 +11,7 @@
 <template>
     <Navbar/>
     <!-- svelte-ignore a11y-media-has-caption -->.
-    <audio autoplay src="/assets/audio/guitar-sound.m4a"></audio>
+    <audio autoplay src="/assets/audio/guitar-sound.m4a" type="audio/mp4"></audio>
     <div id="background-main">
         <div id="div-main">
             <p id="title-text-small" transition:fade="{{delay: 1500, duration: 300}}">Welcome to the world of</p>
