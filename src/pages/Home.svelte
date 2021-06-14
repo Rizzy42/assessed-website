@@ -10,13 +10,15 @@
 
 <template>
     <Navbar/>
+    <!-- svelte-ignore a11y-media-has-caption -->.
+    <audio autoplay src="/assets/audio/guitar-sound.m4a"></audio>
     <div id="background-main">
         <div id="div-main">
             <p id="title-text-small" transition:fade="{{delay: 1500, duration: 300}}">Welcome to the world of</p>
-            <h1 id="title-main" transition:fade="{{delay: 2500, duration: 400}}">Guitar</h1>
+            <h1 id="title-main" transition:fade="{{delay: 4000, duration: 400}}">Guitar</h1>
             <!-- "_blank" targets open links in a new tab -->
             <!-- "noopener" prevents external page from controlling my page, i.e. enhances security -->
-            <p id="attrib-main-image" transition:fade="{{delay: 3500}}">Photo by <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/@julianlozano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Julian Lozano</a> on <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/s/photos/guitar-concert?utm_source=unsplash&utm_medium=referral&utm_content=creditcopytextt">Unsplash</a></p>
+            <p id="attrib-main-image" transition:fade="{{delay: 7000}}">Photo by <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/@julianlozano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Julian Lozano</a> on <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/s/photos/guitar-concert?utm_source=unsplash&utm_medium=referral&utm_content=creditcopytextt">Unsplash</a></p>
         </div>
         <!-- TODO Add credits to guitar image -->
         Photo by <a href="https://unsplash.com/@pt_samv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sam Vanagtmael</a> on <a href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
