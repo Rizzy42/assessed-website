@@ -11,7 +11,7 @@
            <ul class="navbar-nav me-auto">
                <!-- Each nav item has an id that other pages will use to style to indicate the current page -->
                <li class="navbar-item" id="page-home">
-                   <a href="/" class="nav-link">Home</a>
+                   <a href="/home" class="nav-link">Home</a>
                </li>
                <li class="navbar-item" id="page-home">
                    <a href="/instruments/guitar" class="nav-link">The Guitar</a>

@@ -8,7 +8,11 @@
 
     let guitarRiff = new Howl({
         src: ["assets/audio/guitar-sound.webm", "/assets/audio/guitar-sound.mp3"],
-        html5: true
+        html: 5,
+        preload: true,
+        onplayerror: function() {
+            guitarRiff.once("unlock", () => guitarRiff.play() )
+        }
     })
     guitarRiff.play()
     

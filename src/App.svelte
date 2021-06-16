@@ -9,6 +9,7 @@
     import { Router, Route } from "svelte-routing";
 
     // Importing pages
+    import Welcome from "./pages/Welcome.svelte";
     import Home from "./pages/Home.svelte";
     import Guitar from "./pages/Guitar.svelte";
     import Bass from "./pages/Bass.svelte";
@@ -23,7 +24,8 @@
     <div>
         <Route path="/instruments/guitar" component={Guitar}/>
         <Route path="/instruments/bass" component={Bass}/>
-        <Route path="/" exact component={Home}/>
+        <Route path="/home" component={Home}/>
+        <Route path="/" component={Welcome}/>
         <Route component="{NotFound}"/>
     </div>
 </Router>
