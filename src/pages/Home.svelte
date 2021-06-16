@@ -1,8 +1,17 @@
 <script>
+    // HowlerJS to implement guitar riff
+    import { Howl, Howler } from "howler";
     // Imports required to implement transition
     import { fade } from "svelte/transition";
-
+    // Components
     import Navbar from "../components/Navbar.svelte"
+
+    let guitarRiff = new Howl({
+        src: "/assets/audio/guitar-sound.mp3",
+        html5: true
+    })
+    guitarRiff.play()
+    
 
     // Variables for the descriptions of the instruments
     let guitarDesc = "The electric guitar is the most versatile and one of the most loved of all the instruments, with its prescence felt deeply in all genres and songs. From pure pop to hard rock to ambient jazz, you can find this instrument just about anywhere. "
@@ -10,8 +19,9 @@
 
 <template>
     <Navbar/>
-    <!-- svelte-ignore a11y-media-has-caption -->.
-    <audio autoplay src="/assets/audio/guitar-sound.m4a" type="audio/mp4"></audio>
+    <!-- Linter ignores warning -->
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <!-- iFrame to play guitar sound as audio autoplay is blocked by Chromium browsers -->
     <div id="background-main">
         <div id="div-main">
             <p id="title-text-small" transition:fade="{{delay: 1500, duration: 300}}">Welcome to the world of</p>
@@ -47,6 +57,13 @@
         display: flex;
         flex-direction: $direction;
     }
+    #audio-autoplay {
+        // Hides iframe
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 0;
+    }
     #background-main {
         background-image: url("/assets/images/guitar-concert.jpg");
         /* One image to cover the entire section */
@@ -80,7 +97,7 @@
     }
     
     #attrib-main-image {
-        @include paint-font(#000);
+        @include white-paint-font;
     }
     .link-attrib-main-image {
         text-decoration: none;
