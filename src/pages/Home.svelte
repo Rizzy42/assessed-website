@@ -7,7 +7,7 @@
     import Navbar from "../components/Navbar.svelte"
 
     let guitarRiff = new Howl({
-        src: "/assets/audio/guitar-sound.mp3",
+        src: ["assets/audio/guitar-sound.webm", "/assets/audio/guitar-sound.mp3"],
         html5: true
     })
     guitarRiff.play()
