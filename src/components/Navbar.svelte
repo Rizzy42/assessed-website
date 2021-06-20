@@ -3,7 +3,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <!-- Full width container -->
         <div class="container-fluid">
-           <a href="/" class="navbar-brand">
+           <a href="/home" class="navbar-brand">
                 <p id="title-text-small">The world of</p>
                 <h1>Guitar</h1>
            </a>

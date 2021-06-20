@@ -4,7 +4,7 @@
     // Imports required to implement transition
     import { fade } from "svelte/transition";
     // Components
-    import Navbar from "../components/Navbar.svelte"
+    import Navbar from "../components/Navbar.svelte";
 
     let guitarRiff = new Howl({
         src: ["assets/audio/guitar-sound.webm", "/assets/audio/guitar-sound.mp3"],
@@ -61,15 +61,8 @@
         display: flex;
         flex-direction: $direction;
     }
-    #audio-autoplay {
-        // Hides iframe
-        position: absolute;
-        width: 0;
-        height: 0;
-        border: 0;
-    }
     #background-main {
-        background-image: url("/assets/images/guitar-concert.jpg");
+        background-image: url("/assets/images/guitar-concert.webp");
         /* One image to cover the entire section */
         background-size: cover;
     }
@@ -116,7 +109,7 @@
         @include flexbox(column);
         padding: 10em 2em;
         justify-content: center;
-        background-image: url("/assets/images/guitar.jpg");
+        background-image: url("/assets/images/guitar.webp");
         background-size: cover;
         background-position: center center;
         h1 {
