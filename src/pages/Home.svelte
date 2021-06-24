@@ -11,14 +11,15 @@
         html: 5,
         preload: true,
         onplayerror: function() {
-            guitarRiff.once("unlock", () => guitarRiff.play() )
+            guitarRiff.once("unlock", () => guitarRiff.play() );
         }
     })
-    guitarRiff.play()
+    guitarRiff.play();
     
 
     // Variables for the descriptions of the instruments
     let guitarDesc = "The electric guitar is the most versatile and one of the most loved of all the instruments, with its prescence felt deeply in all genres and songs. From pure pop to hard rock to ambient jazz, you can find this instrument just about anywhere. "
+    let bassDesc = "asdf";
 </script>
 
 <template>
@@ -32,16 +33,23 @@
             <h1 id="title-main" transition:fade="{{delay: 4000, duration: 400}}">Guitar</h1>
             <!-- "_blank" targets open links in a new tab -->
             <!-- "noopener" prevents external page from controlling my page, i.e. enhances security -->
-            <p id="attrib-main-image" transition:fade="{{delay: 7000}}">Photo by <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/@julianlozano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Julian Lozano</a> on <a target="_blank" rel="noopener" class="link-attrib-main-image" href="https://unsplash.com/s/photos/guitar-concert?utm_source=unsplash&utm_medium=referral&utm_content=creditcopytextt">Unsplash</a></p>
+            <p class="attrib-image" transition:fade="{{delay: 7000}}">Photo by <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/@julianlozano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Julian Lozano</a> on <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/s/photos/guitar-concert?utm_source=unsplash&utm_medium=referral&utm_content=creditcopytextt">Unsplash</a></p>
         </div>
-        <!-- TODO Add credits to guitar image -->
-        Photo by <a href="https://unsplash.com/@pt_samv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sam Vanagtmael</a> on <a href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
    
     </div>
     <div id="content">
-        <div id="content-guitar">
-            <h1>The electric guitar</h1>
-            <p>{guitarDesc}</p>
+        <div id="bg-guitar">
+            <div class="content-instr">
+                <h1>The electric guitar</h1>
+                <p class="desc-instr">{guitarDesc}</p>
+                <p id="attrib-guitar">Photo by <a class="link-attrib-image" href="https://unsplash.com/@pt_samv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sam Vanagtmael</a> on <a class="link-attrib-image" href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+            </div>
+        </div>
+        <div id="bg-bass">
+            <div class="content-instr">
+                <h1>The electric bass</h1>
+                <p class="desc-instr">{bassDesc}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -56,10 +64,13 @@
         font-family: Rawk Brush;
         color: $colour;
     }
-
     @mixin flexbox($direction) {
         display: flex;
         flex-direction: $direction;
+    }
+    @mixin instr-image() {
+        background-size: cover;
+        background-position: center center
     }
     #background-main {
         background-image: url("/assets/images/guitar-concert.webp");
@@ -93,34 +104,45 @@
         margin-bottom: 0;
     }
     
-    #attrib-main-image {
+    .attrib-image {
         @include white-paint-font;
     }
-    .link-attrib-main-image {
+    .link-attrib-image {
         text-decoration: none;
         color: #ffffff;
+        justify-self: center;
 
         &:hover {
             text-decoration: underline;
         }
     }
-    
-    #content-guitar {
+    #bg-guitar {
+        @include instr-image();
+        background-image: url("/assets/images/guitar.webp");
+    }
+    #bg-bass {
+        @include instr-image();
+        background-image: url("/assets/images/bass.webp");
+    }
+    .content-instr {
         @include flexbox(column);
         padding: 10em 2em;
         justify-content: center;
-        background-image: url("/assets/images/guitar.webp");
-        background-size: cover;
-        background-position: center center;
+        backdrop-filter: blur(1em);
         h1 {
             @include paint-font(var(--main-colour));
             font-size: 3em;
             font-weight: bold;   
         }
-        p {
+        .desc-instr {
             @include white-paint-font;
             font-size: 2em;
         }
+    }
+    #attrib-guitar {
+        @include white-paint-font();
+        align-self: center;
+        font-size: 1em;
     }
     
     /* @media queries to resize fonts accordingly for smaller screens */
@@ -133,8 +155,20 @@
             font-size: 1em;
         }
         
-        #attrib-main-image {
+        .attrib-image {
             font-size: 0.7em;
+        }
+        #div-main {
+            backdrop-filter: blur(0);
+        }
+        .content-instr {
+            backdrop-filter: blur(0);
+            h1 {
+                font-size: 2em;
+            }
+            .desc-instr {
+                font-size: 1.5em;
+            }
         }
     }
 </style>
