@@ -19,7 +19,7 @@
 
     // Variables for the descriptions of the instruments
     let guitarDesc = "The electric guitar is the most versatile and one of the most loved of all the instruments, with its prescence felt deeply in all genres and songs. From pure pop to hard rock to ambient jazz, you can find this instrument just about anywhere. "
-    let bassDesc = "asdf";
+    let bassDesc = "Despite being often mistaken for its smaller brother, the guitar, the bass bares an identity and sound all its own. Its powerful, punchy sound supports the music and delivers the extra oomph that all songs need."
 </script>
 
 <template>
@@ -42,13 +42,17 @@
             <div class="content-instr">
                 <h1>The electric guitar</h1>
                 <p class="desc-instr">{guitarDesc}</p>
-                <p id="attrib-guitar">Photo by <a class="link-attrib-image" href="https://unsplash.com/@pt_samv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sam Vanagtmael</a> on <a class="link-attrib-image" href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                <a class="btn btn-outline-light" href="/instruments/guitar">Learn more</a>
+                <p class="attrib-bg-image">Photo by <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/@pt_samv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sam Vanagtmael</a> on <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
             </div>
         </div>
         <div id="bg-bass">
-            <div class="content-instr">
+            <div class="content-instr" id="content-bass">
                 <h1>The electric bass</h1>
                 <p class="desc-instr">{bassDesc}</p>
+                <a class="btn btn-outline-light" href="/instruments/bass">Learn more</a>
+                <p class="attrib-bg-image">Photo by <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/@montanajuand?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Juan Montana</a> on <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/s/visual/df21a78c-7ed1-4c52-99c6-598d3efc73aa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+  
             </div>
         </div>
     </div>
@@ -82,7 +86,7 @@
         /* Subtitle should be above title */
         @include flexbox(column);
         /* Blurs background image */
-        backdrop-filter: blur(1em);
+        backdrop-filter: blur(0.2em);
         height: 115vh;
         /* Titles should be in the middle of the section */
         justify-content: center;
@@ -119,6 +123,7 @@
     #bg-guitar {
         @include instr-image();
         background-image: url("/assets/images/guitar.webp");
+        
     }
     #bg-bass {
         @include instr-image();
@@ -126,9 +131,9 @@
     }
     .content-instr {
         @include flexbox(column);
-        padding: 10em 2em;
+        padding: 5em 1em;
         justify-content: center;
-        backdrop-filter: blur(1em);
+        backdrop-filter: blur(0.2em);
         h1 {
             @include paint-font(var(--main-colour));
             font-size: 3em;
@@ -139,10 +144,25 @@
             font-size: 2em;
         }
     }
-    #attrib-guitar {
+    .attrib-bg-image {
         @include white-paint-font();
         align-self: center;
         font-size: 1em;
+        margin-bottom: 1em;
+    }
+    .btn {
+        color: #fff;
+        font-family: Rawk Brush;
+        align-self: flex-start;
+        font-size: 1em;
+        width: 7em;
+        margin: 0 0 5em 0;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+        }
     }
     
     /* @media queries to resize fonts accordingly for smaller screens */
@@ -161,8 +181,10 @@
         #div-main {
             backdrop-filter: blur(0);
         }
+        #content-bass {
+            backdrop-filter: blur(1em);
+        }
         .content-instr {
-            backdrop-filter: blur(0);
             h1 {
                 font-size: 2em;
             }
