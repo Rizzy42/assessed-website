@@ -23,7 +23,7 @@
 </script>
 
 <template>
-    <Navbar/>
+    <Navbar navbarStatic=false/>
     <!-- Linter ignores warning -->
     <!-- svelte-ignore a11y-missing-attribute -->
     <!-- iFrame to play guitar sound as audio autoplay is blocked by Chromium browsers -->
@@ -35,7 +35,6 @@
             <!-- "noopener" prevents external page from controlling my page, i.e. enhances security -->
             <p class="attrib-image" transition:fade="{{delay: 7000}}">Photo by <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/@julianlozano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Julian Lozano</a> on <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/s/photos/guitar-concert?utm_source=unsplash&utm_medium=referral&utm_content=creditcopytextt">Unsplash</a></p>
         </div>
-   
     </div>
     <div id="content">
         <div id="bg-guitar">
@@ -80,20 +79,19 @@
         background-image: url("/assets/images/guitar-concert.webp");
         /* One image to cover the entire section */
         background-size: cover;
+        padding: 5em 0;
+        height: 90vh;
     }
     #div-main {
         /* Flexbox will make it easy to position everything */
         /* Subtitle should be above title */
         @include flexbox(column);
+        height: 100%;
         /* Blurs background image */
         backdrop-filter: blur(0.2em);
-        height: 115vh;
         /* Titles should be in the middle of the section */
         justify-content: center;
         align-items: center;
-
-        /* Gets rid of ugly white space */
-        margin: 0;
     }
     
     #title-main {
@@ -102,7 +100,7 @@
         transform: skewY(-11deg);
     }    
     #title-text-small {
-        @include paint-font(#000000);
+        @include white-paint-font();
         font-size: 2em;
         /* Subtitle should stay close to title */
         margin-bottom: 0;
@@ -131,7 +129,7 @@
     }
     .content-instr {
         @include flexbox(column);
-        padding: 5em 1em;
+        padding: 5em 2.5em;
         justify-content: center;
         backdrop-filter: blur(0.2em);
         h1 {
@@ -148,7 +146,6 @@
         @include white-paint-font();
         align-self: center;
         font-size: 1em;
-        margin-bottom: 1em;
     }
     .btn {
         color: #fff;
