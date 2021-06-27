@@ -1,6 +1,6 @@
 <template>
     <!-- nav for navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-static-top navbar-expand-lg navbar-dark bg-dark">
         <!-- Full width container -->
         <div class="container-fluid">
            <a href="/home" class="navbar-brand">
