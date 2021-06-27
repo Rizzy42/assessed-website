@@ -23,15 +23,19 @@
         background-image: url("/assets/images/guitar-bg.webp");
         background-size: cover;
         background-position: center center;
+        // Flexbox for centering elements
         display: flex;
         flex-direction: column;
         align-items: center;
+        // Ensures that height can accomodate all content
         height: 100%;
     }
     #content {
         color: #fff;
         font-family: Rawk Brush;
+        // Makes content 60% of the width of viewport
         width: 60vw;
+        // Blurs only the area the text is on, meaning the rest of the image is sharp
         backdrop-filter: blur(0.2em);
         margin-top: 3em;
         h1 {
