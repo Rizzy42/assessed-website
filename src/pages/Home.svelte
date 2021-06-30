@@ -23,10 +23,8 @@
 </script>
 
 <template>
-    <Navbar navbarStatic=false/>
-    <!-- Linter ignores warning -->
-    <!-- svelte-ignore a11y-missing-attribute -->
-    <!-- iFrame to play guitar sound as audio autoplay is blocked by Chromium browsers -->
+    <Navbar/>
+    <!-- Container to hold background for blur styling  -->
     <div id="background-main">
         <div id="div-main">
             <p id="title-text-small" transition:fade="{{delay: 1500, duration: 300}}">Welcome to the world of</p>
