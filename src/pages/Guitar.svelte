@@ -57,6 +57,7 @@
         backdrop-filter: blur(0.2em);
         // Even more flexbox for working with elemetns inside the content
         display: flex;
+        flex-direction: column;
         align-items: center;
         margin-top: 3em;
         h1 {
