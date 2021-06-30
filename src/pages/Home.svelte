@@ -33,7 +33,6 @@
             <!-- "noopener" prevents external page from controlling my page, i.e. enhances security -->
             <p class="attrib-image" transition:fade="{{delay: 7000}}">Photo by <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/@julianlozano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Julian Lozano</a> on <a target="_blank" rel="noopener" class="link-attrib-image" href="https://unsplash.com/s/photos/guitar-concert?utm_source=unsplash&utm_medium=referral&utm_content=creditcopytextt">Unsplash</a></p>
         </div>
-   
     </div>
     <div id="content">
         <div id="bg-guitar">
