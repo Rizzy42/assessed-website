@@ -9,7 +9,6 @@
            </a>
            <!-- Aligns navbar items to left and provides basic styling -->
            <ul class="navbar-nav me-auto">
-               <!-- Each nav item has an id that other pages will use to style to indicate the current page -->
                <li class="navbar-item" id="page-home">
                    <a href="/home" class="nav-link">Home</a>
                </li>
