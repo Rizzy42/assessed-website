@@ -25,11 +25,11 @@
 
 <template>
     <Navbar/>
-    <!-- TODO Possibly add sound? -->
     <div id="bg">
         <div id="content">
             <h1>What is the Electric Guitar?</h1>
             <p>&nbsp;&nbsp;&nbsp;{guitarDesc1}<br/>&nbsp;&nbsp;&nbsp;{guitarDesc2}<br/>&nbsp;&nbsp;&nbsp;{guitarDesc3}</p>
+            <!-- TODO Center iframe -->
             <iframe width="642" height="361" src="https://www.youtube.com/embed/pvPgOmURNno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div id="attrib">Photo by <a target="_blank" rel="noopener" class="link-attrib" href="https://unsplash.com/@adro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alejandro Morelos</a> on <a target="_blank" rel="noopener" class="link-attrib" href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
         </div>
@@ -41,7 +41,7 @@
         background-image: url("/assets/images/guitar-bg.webp");
         background-size: cover;
         background-position: center center;
-        // Flexbox for centering elements
+        // Flexbox for centering the content div
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,6 +55,9 @@
         width: 80vw;
         // Blurs only the area the text is on, meaning the rest of the image is sharp
         backdrop-filter: blur(0.2em);
+        // Even more flexbox for working with elemetns inside the content
+        display: flex;
+        align-items: center;
         margin-top: 3em;
         h1 {
             text-align: center;
