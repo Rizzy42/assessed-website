@@ -1,12 +1,6 @@
-<script>
-    export let navbarStatic = true;
-
-    let bootstrapClass = () => navbarStatic ? "navbar-static-top" : "fixed-top";
-</script>
-
 <template>
     <!-- nav for navbar -->
-    <nav class="navbar {bootstrapClass()}navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar {bootstrapClass()} navbar-expand-lg navbar-dark bg-dark">
         <!-- Full width container -->
         <div class="container-fluid">
            <a href="/home" class="navbar-brand">

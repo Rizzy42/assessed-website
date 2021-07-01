@@ -26,6 +26,8 @@
         flex-direction: column;
         align-items: center;
         height: 100%;
+        // Navbar does not cover content div
+        padding-top: 5em
     }
     #content {
         color: #fff;

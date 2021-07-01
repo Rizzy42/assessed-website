@@ -18,6 +18,9 @@
         will also be adept at "shredding", a technique in which notes are played extremely fast and precisely, often for long bursts at a time. 
         Rob Chapman's Ghost Fret is a really good example of this.
     `
+    const guitarDesc4 = `
+        Test
+    `
 </script>
 <svelte:head>
     <title>The Guitar</title>
@@ -28,9 +31,18 @@
     <div id="bg">
         <div id="content">
             <h1>What is the Electric Guitar?</h1>
-            <p>&nbsp;&nbsp;&nbsp;{guitarDesc1}<br/>&nbsp;&nbsp;&nbsp;{guitarDesc2}<br/>&nbsp;&nbsp;&nbsp;{guitarDesc3}</p>
-            <!-- TODO Center iframe -->
-            <iframe width="642" height="361" src="https://www.youtube.com/embed/pvPgOmURNno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>&nbsp;&nbsp;&nbsp;{guitarDesc1}</p><br/>
+            <div class="content-container">
+                <img src="/assets/images/guitar-pickup.jpg" alt="An electric guitar's controls close up">
+                <div id="content-container-2">
+                    <p>&nbsp;&nbsp;&nbsp;{guitarDesc2}</p><br>
+                    <p>&nbsp;&nbsp;&nbsp;{guitarDesc3}</p>
+                </div>
+            </div>
+            <div class="content-container">
+                <p>&nbsp;&nbsp;&nbsp;{guitarDesc4}</p>
+                <iframe width="642" height="361" src="https://www.youtube.com/embed/pvPgOmURNno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <div id="attrib">Photo by <a target="_blank" rel="noopener" class="link-attrib" href="https://unsplash.com/@adro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alejandro Morelos</a> on <a target="_blank" rel="noopener" class="link-attrib" href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
         </div>
     </div>
@@ -47,6 +59,8 @@
         align-items: center;
         // Ensures that height can accomodate all content
         height: 100%;
+        // Navbar does not cover content div
+        padding-top: 5em;
     }
     #content {
         color: #fff;
@@ -67,12 +81,25 @@
             font-size: 1.5em;
         }
     }
+    .content-container {
+        display: flex;
+        width: 100%;
+    }
+    #content-container-2 {
+        display: flex;
+        flex-direction: column;
+    }
+    img {
+        width: 20em;
+        margin: 1em;
+    } 
     #attrib {
         text-align: center;
         margin-bottom: 2em;
     }
     iframe {
-        align-self: center;
+        margin: 0 0 1em 2em;
+        justify-self: flex-end;
     }
     .link-attrib {
         color: #fff;
@@ -81,5 +108,9 @@
             text-decoration: underline;
         }
     }
-
+    @media screen and (max-width:900px) {
+        img {
+            display: none;
+        }
+    }
 </style>
