@@ -51,4 +51,18 @@
 	a:hover {
 		text-decoration: none;
 	}
+	@media screen and (max-width:700px) {
+		h1 {
+			font-size: 5em;
+		}
+		#container-buttons {
+			justify-items: center;
+		}
+		#button-yeah {
+			margin: none;
+		}
+		#button-no {
+			display: none;
+		}
+	}
 </style>

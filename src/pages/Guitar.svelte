@@ -79,7 +79,7 @@
         // Makes content 60% of the width of viewport
         width: 60vw;
         // Blurs only the area the text is on, meaning the rest of the image is sharp
-        backdrop-filter: blur(0.2em);
+        backdrop-filter: blur(0.5em);
         // Even more flexbox for working with elemetns inside the content
         display: flex;
         flex-direction: column;
