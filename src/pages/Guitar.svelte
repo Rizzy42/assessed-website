@@ -33,15 +33,11 @@
             <h1>What is the Electric Guitar?</h1>
             <p>&nbsp;&nbsp;&nbsp;{guitarDesc1}</p><br/>
             <div class="content-container">
-                <img src="/assets/images/guitar-pickup.jpg" alt="An electric guitar's controls close up">
                 <div id="content-container-2">
                     <p>&nbsp;&nbsp;&nbsp;{guitarDesc2}</p><br>
-                    <p>&nbsp;&nbsp;&nbsp;{guitarDesc3}</p>
+                    <iframe width="642" height="361" src="https://www.youtube.com/embed/pvPgOmURNno?start=76&end=92" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-            </div>
-            <div class="content-container">
-                <p>&nbsp;&nbsp;&nbsp;{guitarDesc4}</p>
-                <iframe width="642" height="361" src="https://www.youtube.com/embed/pvPgOmURNno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p id="desc-2">&nbsp;&nbsp;&nbsp;{guitarDesc3}</p>
             </div>
             <div id="attrib">Photo by <a target="_blank" rel="noopener" class="link-attrib" href="https://unsplash.com/@adro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alejandro Morelos</a> on <a target="_blank" rel="noopener" class="link-attrib" href="https://unsplash.com/s/photos/electric-guitar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
         </div>
@@ -49,6 +45,21 @@
 </template>
 
 <style lang="scss">
+    @mixin media-phone($iframe-width) {
+        #content-container-2 {
+            flex-direction: column;
+            height: auto;
+            iframe {
+                width: $iframe-width;
+            }
+        }
+        #content p {
+            width: 80vw;
+        }
+        #desc-2 {
+            align-self: center;
+        }
+    }
     #bg {
         background-image: url("/assets/images/guitar-bg.webp");
         background-size: cover;
@@ -66,7 +77,7 @@
         color: #fff;
         font-family: Rawk Brush;
         // Makes content 60% of the width of viewport
-        width: 80vw;
+        width: 60vw;
         // Blurs only the area the text is on, meaning the rest of the image is sharp
         backdrop-filter: blur(0.2em);
         // Even more flexbox for working with elemetns inside the content
@@ -83,23 +94,21 @@
     }
     .content-container {
         display: flex;
+        flex-direction: column;
         width: 100%;
     }
     #content-container-2 {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        height: 22em
     }
-    img {
-        width: 20em;
-        margin: 1em;
-    } 
     #attrib {
         text-align: center;
         margin-bottom: 2em;
     }
     iframe {
-        margin: 0 0 1em 2em;
-        justify-self: flex-end;
+        padding: 1em;
     }
     .link-attrib {
         color: #fff;
@@ -108,9 +117,13 @@
             text-decoration: underline;
         }
     }
-    @media screen and (max-width:900px) {
-        img {
-            display: none;
-        }
+    @media screen and (max-width:430px) {
+        @include media-phone(20em);
+    }
+    @media screen and (min-width: 430px) and (max-width: 840px) {
+        @include media-phone(30em);
+    }
+    @media screen and (min-width:840px) and (max-width:1390px) {
+        @include media-phone(50em);
     }
 </style>
