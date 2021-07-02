@@ -53,7 +53,7 @@
                 width: $iframe-width;
             }
         }
-        #content p {
+        #content {
             width: 80vw;
         }
         #desc-2 {
